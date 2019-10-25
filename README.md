@@ -1,4 +1,8 @@
 # Ti RPC
+
+## swoole版本说明
+这个东西做出来的时候时间比较早，当时swoole 2.0也才刚发版没多久。所以，这个玩意在swoole 1.x系列和swoole 2.x系列里是没什么问题的。但是swoole 4可能发生的一些变动可能会导致这个玩意报一些错。我建议是：swoole 4情况下，不优先考虑这个；如果一定要考虑，自己修一下吧。因为swoole后面是重协程的，而咱这个玩意主要思路还是多进程方式。至于会不会改进做一个协程版本的：会做。但是没有经历至少几十万用户验证前，我应该不会轻易扔出来的。现有的这个版本虽然在协程时代显得LOW，但是贵在经历过百万级的用户体量考验。
+
 ## 简要概述：
 封装的比较简单，代码风格略粗暴，没有过多的组件以及厚重的包装，我不太喜欢过于复杂的东西。整体思路是借鉴蓝天的，代码则自己实现（你也可以认为是抄袭），自己做了些许改动。由于第一个版本我实现的比较烂，所以没有放出来，这个版本代码略干净能看一些，又在我们公司生产环境经过长期的验证，每日支撑将近8000万次的调用，所以我就放出来了。
 
@@ -60,6 +64,8 @@ composer require php-curl-class/php-curl-class
 这个时候，ti rpc将会采用composer自动加载器而不是自定义的自动加载，从而可以方便粗暴快捷简单地使用任何一个php composer库
 
 
+
+
 ## 使用方式
 ##### php index.php [command] [option]
 - start，以非daemon形式开始服务，也就是debug模式
@@ -70,5 +76,8 @@ composer require php-curl-class/php-curl-class
 
 ![](http://static.ti-node.com/github_tirpc_1.png)
 
+## 内容添加
+1. 添加curl和RNCryptor加解密库
+
 ## 联系方式：
-QQ群：712105788
+wechat：sbyuanmaomao
